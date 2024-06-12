@@ -6,7 +6,7 @@ import createVitePlugins from './vite/plugins'
 // https://cn.vitejs.dev/config/
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   const env = loadEnv(mode, process.cwd())
-  const { VITE_APP_ENV } = env
+  const { VITE_APP_ENV, VITE_APP_BASE_API } = env
   return {
     plugins: createVitePlugins(env, command === 'build'),
     resolve: {
@@ -22,10 +22,11 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       port: 9527,
       open: true,
       proxy: {
-        '/api': {
+        // https://cn.vitejs.dev/config/#server-proxy
+        '/dev-api': {
           target: 'http://localhost:8080',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          rewrite: (p) => p.replace(/^\/dev-api/, '')
         }
       }
     }

@@ -1,6 +1,6 @@
 # vue-admin
 
-基于Vue3，vite，pinia等的中后台管理模版，可以快速开展我们的业务功能。
+基于Vue3，vite，pinia, element-plus等的中后台管理模版，可以快速开展我们的业务功能。
 
 ## Recommended IDE Setup
 
@@ -43,3 +43,8 @@ pnpm test:unit
 ```sh
 pnpm lint
 ```
+
+## 其他资源
+
+1. [react-umi-admin](https://github.com/GavinBirkhoff/react-umi-admin) React🌟🌟🌟🌟🌟
+2. [vue-admin](https://github.com/GavinBirkhoff/vue-admin) Vue3🌟🌟🌟🌟🌟
